@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row pt-5">
+            <h1 class="text-center mb-5">The algorithm's exercices</h1>
+            <div class="d-flex align-items-start main-container">
+                <div class="col-4 m-3">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link "  data-bs-toggle="pill" data-bs-target="#Pay-tax-tab" type="button">Paying the Tax</button>
+                        <button class="nav-link "  data-bs-toggle="pill" data-bs-target="#photocopies" type="button">Photocopies</button>
+                        <button class="nav-link "  data-bs-toggle="pill" data-bs-target="#hour" type="button">The hours</button>
+                        <button class="nav-link "  data-bs-toggle="pill" data-bs-target="#money-calculation" type="button">Calculation the money</button>
+                        <button class="nav-link "  data-bs-toggle="pill" data-bs-target="#email-validation" type="button">Email Validation</button>
+                        <button class="nav-link "  data-bs-toggle="pill" data-bs-target="#car-insurance" type="button">Car Insurance</button>
+                        <button class="nav-link"  data-bs-toggle="pill" data-bs-target="#secure-password" type="button">Secure Password</button>
+                        <button class="nav-link active"  data-bs-toggle="pill" data-bs-target="#right-price" type="button">The right price game</button>
+                    </div>
+                </div>
+                <div class="col-8 m-3 theTabs">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <!-- starting the tab-pane -->
+                        <div class="tab-pane fade " id="Pay-tax-tab" >
+                            <div class="d-flex justify-content-center mt-5 mb-5">
+                                <img class="img-fluid" src="img/impots.png" alt="">
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="">Your Gender:</label>
+                                    <select class="form-control impot-gender" name="" id="">
+                                        <option value="0">Choose...</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <label for="">Age:</label>
+                                    <input type="number" name="" id="" class="form-control impot-age">
+                                </div>
+                                <button class="btn mt-5 btn-result impot">show the result!</button>
+                                <div id="result-impot" class="mt-5"></div>
+                            </div>
+                        </div>
+                        <!-- the end of the tab-pane -->
+                        <!-- starting the tab-pane -->
+                        <div class="tab-pane fade" id="photocopies">
+                            <div class="d-flex justify-content-center mt-5 mb-5">
+                                <i class="fa-solid fa-print"></i>
+                            </div>
+                            <div class="text-center p-5">
+                                <label for="" class="mb-3">The number of copy which you want:</label>
+                                <input type="number" class="form-control copy-number">
+                            </div>
+                            <div class="text-center">
+                                <button class="btn mt-5 btn-result photocopies">show the result!</button>
+                                <div id="result-photocopies" class="mt-5"></div>
+                            </div>
+                        </div>
+                        <!-- the end of the tab-pane -->
+                        <!-- starting the tab-pane -->
+                        <div class="tab-pane fade" id="hour">
+                            <div class="d-flex justify-content-center mt-5 mb-5">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="">Hour:</label>
+                                    <input type="number" min="0" max="23" class="form-control hour-hour">
+                                </div>
+                                <div class="col-4">
+                                    <label for="">Minute:</label>
+                                    <input type="number" min="0" max="59" class="form-control hour-minute">
+                                </div>
+                                <div class="col-4">
+                                    <label for="">Second:</label>
+                                    <input type="number" min="0" max="59" class="form-control hour-second">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn mt-5 btn-result hour">show the result!</button>
+                                <div id="result-hour" class="mt-5"></div>
+                            </div>
+                        </div>
+                        <!-- the end of the tab-pane -->
+                        <!-- starting the tab-pane -->
+                        <div class="tab-pane fade" id="money-calculation">
+                            <div class="d-flex justify-content-center mt-5 mb-5">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="">The amount of your receipt :</label>
+                                    <input type="number" min="0"  class="form-control money-calculation-reciept">
+                                </div>
+                                <div class="col-6">
+                                    <label for="">The amount which you have paid :</label>
+                                    <input type="number" min="0"  class="form-control money-calculation-paid">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn mt-5 btn-result money-calculation">show the result!</button>
+                                <div id="result-money-calculation" class="mt-5"></div>
+                            </div>
+                        </div>
+                        <!-- the end of the tab-pane -->
+                        <!-- starting the tab-pane -->
+                        <div class="tab-pane fade" id="email-validation">
+                            <div class="d-flex justify-content-center mt-5 mb-5">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 offset-3">
+                                    <label for="">Your email :</label>
+                                    <input type="text"  class="form-control email-validation-input">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn mt-5 btn-result email-validation">Verify my email</button>
+                                <div id="result-email-validation" class="mt-5"></div>
+                            </div>
+                        </div>
+                        <!-- the end of the tab-pane -->
+                        <!-- starting the tab-pane -->
+                        <div class="tab-pane fade" id="car-insurance">
+                            <div class="d-flex justify-content-center mt-5 mb-5">
+                                <i class="fa-solid fa-car"></i>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="">How old are you?</label>
+                                    <select name="" id="" class="form-control select-age-assurance">
+                                        <option value="">.....</option>
+                                        <option value="1">More than 25 years</option>
+                                        <option value="2">Less than 25 years</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <label for="">You have had your driving license for?</label>
+                                    <select name="" id="" class="form-control select-license-assurance">
+                                        <option value="">.....</option>
+                                        <option value="3">More than 2 years</option>
+                                        <option value="4">Less than 2 years</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <label for="">how you ever had an accident?</label>
+                                    <select name="" id="" class="form-control select-accident-assurance">
+                                        <option value="">.....</option>
+                                        <option value="5">0 accident</option>
+                                        <option value="6">1 accident</option>
+                                        <option value="7">2 accident</option>
+                                        <option value="8">3 accident</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn mt-5 btn-result car-insurance">Verify my email</button>
+                                <div id="result-car-insurance" class="mt-5"></div>
+                            </div>
+                        </div>
+                        <!-- the end of the tab-pane -->
+                        <!-- starting the tab-pane -->
+                        <div class="tab-pane fade" id="secure-password">
+                            <div class="d-flex justify-content-center mt-5 mb-5">
+                                <i class="fa-solid fa-unlock"></i>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 offset-3">
+                                    <label for="">Enter your password :</label>
+                                    <input type="text" onkeyup="changeMotDePass()"  class="form-control secure-password-input">
+                                    <span class="explain-text-password"></span>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn mt-5 btn-result email-validation">Verify my email</button>
+                                <div id="result-email-validation" class="mt-5"></div>
+                            </div>
+                        </div>
+                        <!-- the end of the tab-pane -->
+                        <!-- starting the tab-pane -->
+                        <div class="tab-pane fade  show active" id="right-price">
+                            <div class="d-flex justify-content-center mt-5 mb-5">
+                                <img src="img/monitor.webp" class="img-fluid" alt="" width="500">
+                            </div>
+                            <div class="row">
+                                <div class="col-6 offset-3">
+                                    <label for="">Enter your guessed price :</label>
+                                    <input type="number"   class="form-control right-price-input">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn mt-2 btn-result">Check the price!</button>
+                                <div id="result-email-validation" class="mt-5"></div>
+                            </div>
+                        </div>
+                        <!-- the end of the tab-pane -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

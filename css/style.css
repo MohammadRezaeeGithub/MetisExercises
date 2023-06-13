@@ -1,0 +1,73 @@
+/************** 
+FONTS
+**************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/**************---------------------------------------- 
+GLOBAL STYLE
+*************------------------------------------------*/
+:root{
+    --background-color:#BDBDBD;
+    --tabbackground-color:#FAFAFA;
+    --shadow-black-300: 0 5px 15px rgba(0,0,0,0.3);
+    --actvie-background-color:#00BCD4;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+    line-height: 1.5;
+}
+*{
+    padding:0;
+    margin: 0;
+    outline: none !important;
+}
+.main-container{
+    min-height: 50vh !important;
+}
+.nav-link.active{
+    background-color: var(--actvie-background-color) !important;
+    border-radius: 0 !important;
+    border: none !important;
+}
+.nav-link{
+    border-radius: 0 !important;
+    border: 1px solid var(--actvie-background-color) !important;
+    margin-bottom: 10px;
+    color:#EEEEEE !important;
+}
+.nav-link:hover{
+    background-color: var(--actvie-background-color);
+    border:none !important;
+}
+.theTabs{
+    background-color: var(--tabbackground-color) !important;
+    box-shadow: var(--shadow-black-300);
+    border: 1px solid #B0BEC5;
+    padding: 20px;
+    min-height: 100% !important;
+}
+.btn-result{
+    background-color: var(--actvie-background-color);
+    color: white;
+}
+.btn-result:hover{
+    background-color: transparent !important;
+    color: var(--actvie-background-color);
+    border: 1px solid var(--actvie-background-color)
+}
+#photocopies i,
+#hour i,
+#money-calculation i,
+#email-validation i,
+#car-insurance i,
+#secure-password i{
+    font-size: 150px;
+    color:var(--actvie-background-color)
+}
+#car-insurance label {
+    font-size: 13px;
+}
