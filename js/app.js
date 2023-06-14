@@ -1,4 +1,4 @@
-/******************************************************************* 
+/******************************************************************
 paying the taxes
 *********************************************************************/
 
@@ -371,14 +371,84 @@ const theOptions = [
     {price:500,src:"img/mouse.png"}
 ]
 
-function guessTheRightPriceGame() {
-    const number = Math.floor(Math.random() * theOptions.length);
-    document.querySelector('#right-price img').src = theOptions[number].src;
+class PriceGuess{
+   randomNumber;
+   YOU_WIN = 1;
+   LESS_THAN_PRICE = 2;
+   MORE_THAN_PRICE = 3;
 
-    const priceEntered = document.querySelector('.right-price-input').value
+   initalGame(){
+    this.randomNumber = Math.floor(Math.random() * theOptions.length);
+    document.querySelector('#right-price img').src = theOptions[this.randomNumber].src;
+    eventListeners()
+   }
+
+   checkPrice(){
     
+    const priceEntered = document.querySelector('.right-price-input').value
+    if(priceEntered == theOptions[this.randomNumber].price){
+      this.showTheMessage("Bravo, You have guessed the right price!!!",this.YOU_WIN)
+    }else if (priceEntered < theOptions[this.randomNumber].price){
+      this.showTheMessage(priceEntered + " is less than the price!!!!",this.LESS_THAN_PRICE)
+    }else{
+      this.showTheMessage(priceEntered + " is more than the price!!!",this.MORE_THAN_PRICE)
+    }
+   }
+
+   showTheMessage(text,state){
+    const result = document.querySelector('#result-right-price')
+    const div = document.createElement("div");
+
+    if(state == this.YOU_WIN){
+      div.classList.add("alert", "text-center", "alert-success");
+      div.innerHTML = text;
+      result.appendChild(div)
+      this.showModal()
+    }else if(state == this.LESS_THAN_PRICE || state == this.MORE_THAN_PRICE){
+      div.classList.add("alert", "text-center", "alert-warning");
+      div.innerHTML = text;
+      result.appendChild(div)
+    }
+   }
+
+   showModal(){
+    let modal = document.querySelector('.modal')
+    modal.classList.add('show')
+    modal.setAttribute('style', 'display:block !important')
+    modal.setAttribute('aria-modal','true')
+    modal.setAttribute('role','dialog')
+    document.body.classList.add('modal-open')
+    document.body.setAttribute('style','overflow:hidden;padding-right:15px;')
+    const div = `
+    <div class="modal-backdrop fade show"></div>
+    `;
+    document.body.innerHTML += div;
+   }
+
+   closeModal(){
+    let modal = document.querySelector('.modal')
+    modal.classList.remove('show')
+    modal.removeAttribute("style")
+    modal.removeAttribute('aria-modal')
+    modal.removeAttribute('role')
+    document.body.classList.remove('modal-open')
+    document.body.removeAttribute('style')
+    document.querySelector('.modal-backdrop').remove()
+    this.initalGame()
+   }
 }
 
-guessTheRightPriceGame();
+const priceGuess = new PriceGuess();
+priceGuess.initalGame();
+// eventListeners()
 
-
+function eventListeners(){
+  document.querySelector('.right-price').addEventListener('click',()=>{
+    console.log('1')
+    priceGuess.checkPrice();
+  })
+}
+function closeModalMain(){
+  priceGuess.closeModal()
+  document.querySelector('#result-right-price').innerHTML = '';
+}

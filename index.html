@@ -27,8 +27,8 @@
                         <button class="nav-link active"  data-bs-toggle="pill" data-bs-target="#right-price" type="button">The right price game</button>
                     </div>
                 </div>
-                <div class="col-8 m-3 theTabs">
-                    <div class="tab-content" id="v-pills-tabContent">
+                <div class="col-8 m-3  theTabs">
+                    <div class="tab-content " id="v-pills-tabContent">
                         <!-- starting the tab-pane -->
                         <div class="tab-pane fade " id="Pay-tax-tab" >
                             <div class="d-flex justify-content-center mt-5 mb-5">
@@ -199,8 +199,8 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button class="btn mt-2 btn-result">Check the price!</button>
-                                <div id="result-email-validation" class="mt-5"></div>
+                                <button class="btn mt-2 btn-result right-price">Check the price!</button>
+                                <div id="result-right-price" class="mt-5"></div>
                             </div>
                         </div>
                         <!-- the end of the tab-pane -->
@@ -209,6 +209,21 @@
             </div>
         </div>
     </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="img/win.gif" alt="" >
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-result " onclick="closeModalMain()">Start a new game?</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <script src="js/app.js"></script>
+    
 </body>
 </html>

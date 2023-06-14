@@ -27,6 +27,7 @@ body{
 }
 .main-container{
     min-height: 50vh !important;
+    margin-bottom: 200px;
 }
 .nav-link.active{
     background-color: var(--actvie-background-color) !important;
@@ -70,4 +71,8 @@ body{
 }
 #car-insurance label {
     font-size: 13px;
+}
+
+.modal-body img{
+    max-width: 100%;
 }
